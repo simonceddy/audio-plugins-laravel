@@ -14,7 +14,7 @@ class ListPlugins extends Controller
     public function __invoke(Request $request)
     {
         return response()->json(
-            Plugin::with('brand')->get()
+            Plugin::with(['brand', 'tags'])->get()
         );
     }
 }

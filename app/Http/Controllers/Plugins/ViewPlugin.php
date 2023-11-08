@@ -13,7 +13,7 @@ class ViewPlugin extends Controller
      */
     public function __invoke(Plugin $plugin)
     {
-        $plugin->load('brand');
+        $plugin->load(['brand', 'tags']);
         return response()->json($plugin);
     }
 }
