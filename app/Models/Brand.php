@@ -9,9 +9,18 @@ class Brand extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'data' => 'array'
+    ];
+
     protected $fillable = [
         'name',
         'url',
         'data'
     ];
+
+    public function plugins()
+    {
+        return $this->hasMany(Plugin::class);
+    }
 }
