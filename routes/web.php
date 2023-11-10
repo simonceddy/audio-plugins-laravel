@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\Brands\{
+    ListBrands,
+    ViewBrand
+};
 use App\Http\Controllers\Plugins\{
     ListPlugins,
     ViewPlugin
@@ -31,6 +35,9 @@ Route::get('/', function () {
 
 Route::get('/plugins', ListPlugins::class);
 Route::get('/plugin/{plugin}', ViewPlugin::class);
+
+Route::get('/brands', ListBrands::class);
+Route::get('/brand/{brand}', ViewBrand::class);
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

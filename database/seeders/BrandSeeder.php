@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Events\BrandSlugsJsonSaved;
 use App\Models\Brand;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -39,6 +40,7 @@ class BrandSeeder extends Seeder
             $data = json_decode($fs->get('devs.json'), true);
             $this->seedBrands($data);
             $fs->put('brand-slugs.json', json_encode($this->brandSlugs));
+            BrandSlugsJsonSaved::dispatch();
 
         } else {
             echo 'No brands data found' . PHP_EOL;
