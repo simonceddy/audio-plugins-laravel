@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import {
   useState, createContext, useContext, Fragment, useMemo
 } from 'react';
@@ -36,7 +37,7 @@ function Trigger({ children }) {
 }
 
 function Content({
-  align = 'right', width = '48', contentClasses = 'py-1 bg-white', children
+  align = 'right', width = '48', contentClasses = 'py-1 bg-white dark:bg-black dark:text-white', children
 }) {
   const { open, setOpen } = useContext(DropDownContext);
 
@@ -81,9 +82,9 @@ function DropdownLink({ className = '', children, ...props }) {
     <Link
       {...props}
       className={
-                `block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out ${
-                  className}`
-            }
+        `block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-teal-200 dark:hover:bg-blue-800 dark:focus:bg-blue-800 transition duration-150 ease-in-out ${
+          className}`
+      }
     >
       {children}
     </Link>

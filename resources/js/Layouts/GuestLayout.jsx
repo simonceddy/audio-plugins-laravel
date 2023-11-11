@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import { Link } from '@inertiajs/react';
 import ApplicationLogo from '@/Components/ApplicationLogo';
 

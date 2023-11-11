@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 
@@ -48,7 +49,7 @@ export default function Modal({
           leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
         >
           <Dialog.Panel
-            className={`mb-6 bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:w-full sm:mx-auto ${maxWidthClass}`}
+            className={`mb-6 bg-white dark:bg-black dark:text-lime-100 rounded-lg overflow-hidden shadow-xl transform transition-all sm:w-full sm:mx-auto ${maxWidthClass}`}
           >
             {children}
           </Dialog.Panel>

@@ -33,11 +33,11 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/plugins', ListPlugins::class);
-Route::get('/plugin/{plugin}', ViewPlugin::class);
+Route::get('/plugins', ListPlugins::class)->name('plugin.list');
+Route::get('/plugin/{plugin}', ViewPlugin::class)->name('plugin.view');
 
-Route::get('/brands', ListBrands::class);
-Route::get('/brand/{brand}', ViewBrand::class);
+Route::get('/brands', ListBrands::class)->name('brand.list');
+Route::get('/brand/{brand}', ViewBrand::class)->name('brand.view');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
